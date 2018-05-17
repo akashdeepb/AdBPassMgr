@@ -5,7 +5,7 @@ def decrypt(fname):
     print("\n\n D e c r y p t i n g  : " + fname)
     if os.path.isfile(fname):
         file= open(fname,"r")
-        pin=getpass.getpass("\n\n Enter    P I N  : ")
+        pin=getpass.getpass("\n\n Enter    P I N  : [# hidden #] ")
         off=ord(pin[0])
         off=off/2
         of2=ord(pin[3])
