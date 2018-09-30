@@ -1,6 +1,9 @@
 # AdBPassMgr
 Password Managing tool which encrypts and decrypts the passwords into a binary file with pin. This tool can generate passwords on the preferences of an individual.
 
+<img src="AdBPassMgr.png">
+
+
 ## How to Use: 
         Step 1 : Download or Clone from : https://github.com/akashdeepb/AdBPassMgr.git into your preferred directory
         Step 2 : You'll find a shell script (AdBPassMgr.sh). 
