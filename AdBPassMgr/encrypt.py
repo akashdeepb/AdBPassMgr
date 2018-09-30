@@ -8,11 +8,19 @@ def encrypt(fname,pwd):
             stat=1
         else:
             stat=0
+        pwdStat=0
+        while pwdStat==0:
+            pin=getpass.getpass("\n\n Enter PIN : ")
+            cnfpin=getpass.getpass("\n Confirm PIN : ")
+            if pin!=cnfpin:
+                print("\n -- PIN MATCHING FAILED -- ")
+                pwdStat=0
+            else:
+                pwdStat=1
     else:
         stat=1
     if stat==1:
         data=''
-        pin=raw_input("\n\n Enter PIN : ")
         off=ord(pin[0])
         off=off/2
         of2=ord(pin[3])
