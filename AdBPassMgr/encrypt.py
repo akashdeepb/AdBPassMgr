@@ -1,4 +1,5 @@
 import os
+import getpass
 def encrypt(fname,pwd):
     name=fname+".bin"
     if os.path.isfile(name):
@@ -8,6 +9,10 @@ def encrypt(fname,pwd):
             stat=1
         else:
             stat=0
+    else:
+        stat=1
+    if stat==1:
+        data=''
         pwdStat=0
         while pwdStat==0:
             pin=getpass.getpass("\n\n Enter PIN : ")
@@ -17,10 +22,6 @@ def encrypt(fname,pwd):
                 pwdStat=0
             else:
                 pwdStat=1
-    else:
-        stat=1
-    if stat==1:
-        data=''
         off=ord(pin[0])
         off=off/2
         of2=ord(pin[3])
