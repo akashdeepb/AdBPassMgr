@@ -1,5 +1,6 @@
 import string
 import random
+import Tkinter as tk
 from builder import numbld,difbld,keybld
 from encrypt import encrypt
 def randbld():
@@ -16,6 +17,7 @@ def randbld():
         print("\n\n ------------------------------------------------")
         print("\n\t 1 - Generate New Random Password ")
         print("\n\t 2 - Save this password (With Encryption)")
+        print("\n\t 3 - copy to clipboard and save (With encryption)")
         print("\n\t\t 0 (or any other) - To Continue... ")
         sel=input("\n\n Enter your Selection : ")
         if sel==1:
@@ -24,8 +26,16 @@ def randbld():
             fname=raw_input("\n\n Enter File Name : ")
             encrypt(fname,pwd)
             loop=0
+        elif sel==3:
+            copyclip(pwd)
+            fname=raw_input("\n\n Enter File Name : ")
+            encrypt(fname,pwd)
+            loop=0
         else:
             loop=0
+	      
+	     
+            
 
 def specmenu():
     print("\n\n\n Create Password Based on - ")
@@ -41,3 +51,14 @@ def specmenu():
         keybld()
     else:
         print("\n\n Invalid selection ")
+
+def copyclip(pwd):
+	cb = tk.Tk()
+	cb.withdraw()
+	cb.clipboard_clear()
+	cb.clipboard_append(pwd)
+	cb.after(100000,lambda:cb.distroy())
+	cb.mainloop()
+	print("\n copied to clipboard")
+
+
